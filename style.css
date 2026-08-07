@@ -1,0 +1,736 @@
+/* ==========================================================================
+   THEME CONFIGURATION
+   Edit these custom properties to restyle the entire site.
+   ========================================================================== */
+:root {
+  --color-primary: #2f5d8a;
+  --color-primary-dark: #1f3f5f;
+  --color-accent: #4d90c4;
+
+  --color-bg: #ffffff;
+  --color-bg-alt: #f4f6f8;
+  --color-text: #1c1c1c;
+  --color-text-muted: #5a5a5a;
+  --color-border: #e0e3e7;
+
+  --color-placeholder-bg: #fff8e6;
+  --color-placeholder-border: #e8d28a;
+  --color-placeholder-text: #7a6420;
+
+  --font-heading: "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-body: "Segoe UI", system-ui, -apple-system, sans-serif;
+
+  --max-width: 1140px;
+  --radius: 8px;
+  --spacing: 1rem;
+}
+
+/* Dark mode override — swap or remove if you don't want auto dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #14181c;
+    --color-bg-alt: #1c2126;
+    --color-text: #e8e8e8;
+    --color-text-muted: #a3a3a3;
+    --color-border: #2c333a;
+    --color-primary: #6ba3d6;
+    --color-primary-dark: #8fbde3;
+    --color-accent: #6ba3d6;
+
+    --color-placeholder-bg: #2a2618;
+    --color-placeholder-border: #5a4d20;
+    --color-placeholder-text: #d8c37a;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  background: var(--color-bg-alt);
+  border-bottom: 1px solid var(--color-border);
+  padding: 3rem 0 2rem;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  flex-wrap: wrap;
+}
+
+.avatar {
+  flex-shrink: 0;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.header-text h1 {
+  margin: 0 0 0.15rem;
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  color: var(--color-primary-dark);
+}
+
+.header-text .title {
+  margin: 0 0 0.6rem;
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+}
+
+.contact-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  padding: 0;
+  margin: 0;
+  font-size: 0.92rem;
+}
+
+.contact-list a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.contact-list a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Nav ---------- */
+.site-nav {
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.nav-link {
+  appearance: none;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: var(--color-text-muted);
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 0.9rem 0.85rem 0.7rem;
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  color: var(--color-primary-dark);
+}
+
+.nav-link.active {
+  color: var(--color-primary-dark);
+  border-bottom-color: var(--color-primary);
+}
+
+/* ---------- Sections ---------- */
+main {
+  padding: 2.5rem 0 4rem;
+}
+
+.tab-panel[hidden] {
+  display: none;
+}
+
+section {
+  margin-bottom: 2.75rem;
+}
+
+section h2 {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  color: var(--color-primary-dark);
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: 0.4rem;
+  margin-bottom: 1.25rem;
+}
+
+.summary {
+  font-size: 1.05rem;
+  color: var(--color-text);
+}
+
+/* ---------- Experience ---------- */
+.job {
+  margin-bottom: 1.75rem;
+}
+
+.job:last-child {
+  margin-bottom: 0;
+}
+
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+}
+
+.job-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.job-dates {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.job-company {
+  margin: 0.1rem 0 0.5rem;
+  font-style: italic;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+.job ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.job li {
+  margin-bottom: 0.35rem;
+}
+
+/* ---------- Skills ---------- */
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.9rem;
+}
+
+.skill-row {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 0.5rem 1rem;
+  align-items: start;
+}
+
+.skill-label {
+  font-weight: 600;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tag {
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 0.2rem 0.7rem;
+  font-size: 0.85rem;
+}
+
+.tag-placeholder {
+  background: var(--color-placeholder-bg);
+  border: 1px dashed var(--color-placeholder-border);
+  color: var(--color-placeholder-text);
+  border-radius: 999px;
+  padding: 0.2rem 0.7rem;
+  font-size: 0.85rem;
+}
+
+/* ---------- Education ---------- */
+.edu-item h3 {
+  margin: 0 0 0.15rem;
+  font-size: 1.05rem;
+}
+
+.edu-item p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+/* ---------- Portfolio / Projects ---------- */
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.project-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  background: var(--color-bg-alt);
+}
+
+.project-card-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.project-card-thumb {
+  position: relative;
+  flex-shrink: 0;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-placeholder-bg);
+  border: 1px dashed var(--color-placeholder-border);
+  color: var(--color-placeholder-text);
+  border-radius: var(--radius);
+  font-size: 0.7rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+.project-card-thumb:has(img):hover {
+  overflow: visible;
+  z-index: 20;
+}
+
+.project-card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.project-card-thumb:hover img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: auto;
+  height: auto;
+  max-width: min(60vw, 420px);
+  max-height: min(60vw, 420px);
+  object-fit: contain;
+  background: var(--color-bg-alt);
+  border-radius: var(--radius);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+}
+
+.project-card-thumb:has(img) {
+  border: none;
+  background: none;
+}
+
+.project-card h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+}
+
+.project-card-title-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin: 0 0 0.35rem;
+}
+
+.project-card-title-row h3 {
+  margin: 0;
+}
+
+.project-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.project-card a {
+  color: var(--color-accent);
+  display: block;
+}
+
+.project-card a:hover {
+  text-decoration: underline;
+}
+
+.project-card-title-row a {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--color-accent);
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  line-height: 1.2;
+}
+
+.project-card-title-row a:hover {
+  background: var(--color-primary);
+  color: #fff;
+  text-decoration: none;
+}
+
+.link-card {
+  appearance: none;
+  font-family: var(--font-body);
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.link-card:hover {
+  border-color: var(--color-accent);
+  background: var(--color-bg);
+}
+
+/* ---------- Game project entries ---------- */
+.game-project-card {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  align-items: stretch;
+}
+
+.game-project-body {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.game-project-body h3 {
+  margin: 0 0 0.2rem;
+  font-size: 1rem;
+}
+
+.game-project-link {
+  display: inline-block;
+  margin: 0 0 0.5rem;
+  font-size: 0.85rem;
+  color: var(--color-accent);
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.game-project-link:hover {
+  text-decoration: underline;
+}
+
+.game-project-link-pending {
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.game-project-body p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+/* Gallery: a 16:9 main image with three 16:9 thumbnails stacked in a
+   column to its right, sized to match the main image's height. Pure CSS —
+   hovering (or focusing) a thumbnail swaps which large image is visible. */
+.game-project-gallery {
+  position: relative;
+  flex: 0 0 auto;
+  align-self: flex-start;
+  display: grid;
+  grid-template-columns: auto 120px;
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas:
+    "main t1"
+    "main t2"
+    "main t3";
+  gap: 0.6rem;
+}
+
+.gallery-main {
+  grid-area: main;
+  position: relative;
+  height: 222px;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.gallery-image {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-placeholder-bg);
+  border: 1px dashed var(--color-placeholder-border);
+  color: var(--color-placeholder-text);
+  font-size: 0.75rem;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.gallery-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-image:has(img) {
+  border: none;
+  background: none;
+}
+
+.gallery-image.is-active {
+  opacity: 1;
+}
+
+.gallery-thumb {
+  appearance: none;
+  padding: 0;
+  width: 120px;
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-placeholder-bg);
+  border: 1px dashed var(--color-placeholder-border);
+  color: var(--color-placeholder-text);
+  border-radius: calc(var(--radius) / 2);
+  font-size: 0.65rem;
+  cursor: pointer;
+  overflow: hidden;
+  transition: border-color 0.15s ease;
+}
+
+.gallery-thumb:has(img) {
+  background: none;
+  border-style: solid;
+  border-color: var(--color-border);
+}
+
+.gallery-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-thumb-1 { grid-area: t1; }
+.gallery-thumb-2 { grid-area: t2; }
+.gallery-thumb-3 { grid-area: t3; }
+
+.gallery-thumb:hover,
+.gallery-thumb:focus-visible {
+  border-color: var(--color-accent);
+}
+
+.gallery-thumb-2:is(:hover, :focus) ~ .gallery-main .gallery-image-1,
+.gallery-thumb-3:is(:hover, :focus) ~ .gallery-main .gallery-image-1 {
+  opacity: 0;
+}
+
+.gallery-thumb-2:is(:hover, :focus) ~ .gallery-main .gallery-image-2 {
+  opacity: 1;
+}
+
+.gallery-thumb-3:is(:hover, :focus) ~ .gallery-main .gallery-image-3 {
+  opacity: 1;
+}
+
+@media (max-width: 480px) {
+  .game-project-card {
+    flex-direction: column;
+  }
+
+  .game-project-gallery {
+    align-self: center;
+  }
+}
+
+/* ---------- Home explore buttons ---------- */
+.explore-grid {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.explore-grid .project-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.explore-thumb {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-placeholder-bg);
+  border: 1px dashed var(--color-placeholder-border);
+  color: var(--color-placeholder-text);
+  border-radius: var(--radius);
+  font-size: 0.8rem;
+  overflow: hidden;
+}
+
+.explore-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.explore-thumb:has(img) {
+  border: none;
+  background: none;
+}
+
+.explore-grid .project-card h3 {
+  font-size: 1.15rem;
+  color: #9aa0a8;
+}
+
+/* ---------- Featured project ---------- */
+.featured-project-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin-bottom: 0.75rem;
+}
+
+.featured-project-header h2 {
+  margin: 0.83em 0 0;
+}
+
+.featured-project-header a {
+  color: var(--color-accent);
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.featured-project-summary {
+  font-size: 1.1rem;
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.featured-project-header a:hover {
+  text-decoration: underline;
+}
+
+.screenshot-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.screenshot-row {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.screenshot-row-reverse {
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+}
+
+.screenshot {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  display: block;
+}
+
+.screenshot-blurb {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 640px) {
+  .screenshot-row,
+  .screenshot-row-reverse {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Placeholder callouts ---------- */
+.placeholder {
+  background: var(--color-placeholder-bg);
+  border: 1px dashed var(--color-placeholder-border);
+  color: var(--color-placeholder-text);
+  border-radius: var(--radius);
+  padding: 0.6rem 0.85rem;
+  font-size: 0.88rem;
+}
+
+.placeholder-inline {
+  background: var(--color-placeholder-bg);
+  border: 1px dashed var(--color-placeholder-border);
+  color: var(--color-placeholder-text);
+  border-radius: 4px;
+  padding: 0 0.4rem;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 520px) {
+  .skill-row {
+    grid-template-columns: 1fr;
+  }
+  .header-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .contact-list {
+    justify-content: center;
+  }
+  .nav-inner {
+    justify-content: center;
+    text-align: center;
+  }
+  .nav-link {
+    padding: 0.75rem 0.6rem 0.6rem;
+    font-size: 0.85rem;
+  }
+}
