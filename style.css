@@ -646,7 +646,7 @@ section h2 {
 }
 
 .featured-project-summary {
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   padding-bottom: 1.25rem;
   margin-bottom: 1.25rem;
   border-bottom: 1px solid var(--color-border);
@@ -693,25 +693,6 @@ section h2 {
   .screenshot-row-reverse {
     grid-template-columns: 1fr;
   }
-}
-
-/* ---------- Placeholder callouts ---------- */
-.placeholder {
-  background: var(--color-placeholder-bg);
-  border: 1px dashed var(--color-placeholder-border);
-  color: var(--color-placeholder-text);
-  border-radius: var(--radius);
-  padding: 0.6rem 0.85rem;
-  font-size: 0.88rem;
-}
-
-.placeholder-inline {
-  background: var(--color-placeholder-bg);
-  border: 1px dashed var(--color-placeholder-border);
-  color: var(--color-placeholder-text);
-  border-radius: 4px;
-  padding: 0 0.4rem;
-  font-size: 0.85rem;
 }
 
 @media (max-width: 520px) {
