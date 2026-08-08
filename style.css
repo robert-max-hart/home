@@ -227,6 +227,14 @@ section h2 {
   font-size: 0.95rem;
 }
 
+.job-company a {
+  color: var(--color-accent);
+}
+
+.job-company a:hover {
+  text-decoration: underline;
+}
+
 .job ul {
   margin: 0;
   padding-left: 1.25rem;
